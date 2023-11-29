@@ -176,7 +176,7 @@ def abstractiveSumm(article, progress_bar):
     progress_bar.progress(progress)
 
     # load trained T5 model
-    model.load_model("t5","AbstractiveSummarization", use_gpu=False)
+    model.load_model("t5","AbstractiveSummarization/FineTuneModel", use_gpu=False)
 
     # predict
     summlist = model.predict(article)
