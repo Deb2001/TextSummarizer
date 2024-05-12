@@ -1,4 +1,4 @@
 # Ignore all text files
 *.txt
-
+__pycache__
 AbstractiveSummarization/FineTuneModel

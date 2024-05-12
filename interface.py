@@ -186,6 +186,23 @@ def abstractiveSumm(article, progress_bar):
     progress_bar.progress(progress)
     return summary
 
+#8888888888888888888888888888888888888888888888
+#TEST
+#8888888888888888888888888888888888888888888888
+
+def abstractiveS(article):
+
+    # instantiate
+    model = SimpleT5()
+
+    # load trained T5 model
+    model.load_model("t5","AbstractiveSummarization/FineTuneModel", use_gpu=False)
+
+    # predict
+    summlist = model.predict(article)
+    summary= summlist[0]
+    return(summary)
+
 #**************************************************************************************************
 
 progress = 0.0
@@ -195,7 +212,7 @@ def main():
     # Copyright information
     st.markdown(
         """
-        &copy; Under partial fulfilment of requirements of PROJCS701 by Abhirup Mazumder and Debjyoti Ghosh
+        &copy; Under partial fulfilment of requirements of PROJCS801 by Abhirup Mazumder and Debjyoti Ghosh
         """
     )
     input_text = st.text_area("Input your article", height=200)
